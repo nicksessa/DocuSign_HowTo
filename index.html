@@ -46,18 +46,100 @@
 
 
 
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.toc {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+
+
   </style>
 </head>
 <body>
 
-<!--
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>My First Bootstrap 4 Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
--->
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-div">
   <!-- <a class="navbar-brand" href="#" style="font-family:'Roboto', sans-serif"><i class="fa fa-stack-overflow"></i>CHUBB</a> -->
   <a class="navbar-brand" href="#">
     <img src="assets/images/logo-chubb-white-1.png" alt="CHUBB" style="width:40px;">
@@ -69,7 +151,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
 
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
       </li>
 
@@ -86,57 +168,53 @@
   </div>  
 </nav>
 
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-3  sticky-div">
-      <h3>Table of Contents</h3>
-      <h5></h5>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <!-- <a class="nav-link" href="#newTemplate">Create New Template</a>  -->
-          <button type="button" class="btn btn-sm btn-info collapsed" data-instructions="click to expand" data-toggle="collapse" data-target="#createNewTemplate">Create New Template</button>
-          <div id="createNewTemplate" class="collapse">
-            <ol class="1">
-              <li><a class="nav-link" href="#newTemplate">New Template</a></li>
-              <li><a class="nav-link" href="#templateName">Template Name and Description</a></li>
-              <li><a class="nav-link" href="#uploadForm">Upload Form</a></li>
-              <li><a class="nav-link" href="#setSigningOrder">Set Signing Order</a></li>
-              <li><a class="nav-link" href="#advancedOptions">Advanced Options</a></li>
-              <li><a class="nav-link" href="#customFields">CustomFields</a></li>
-              <li><a class="nav-link" href="#signatureTips">Signature</a></li>
-              <li><a class="nav-link" href="#radioButtons">Radio Buttons</a></li>
-              <li><a class="nav-link" href="#replaceForm">Replace Form</a></li>
-          </div>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn btn-sm btn-info collapsed" data-instructions="click to expand" data-toggle="collapse" data-target="#thirdPartyInstructions">Third Party Instructions</button>
-          <div id="thirdPartyInstructions" class="collapse">
-            <ol class="1">
-              <li><a class="nav-link" href="#createThirdPartyBox">Create Box for Third Party</a></li>
-              <li><a class="nav-link" href="#recipientCollaboration">Recipient & Collaboration</a></li>
-              <li><a class="nav-link" href="#stepThree">Step Three</a></li>
-              <li><a class="nav-link" href="#stepFour">Step Four</a></li>
-              <li><a class="nav-link" href="#stepFive">Step Five</a></li>
-            </ol>
-          </div>
-        </li>
-        <li class="nav-item">
-          <button type="button" class="btn btn-sm btn-info collapsed" data-instructions="click to expand" data-toggle="collapse" data-target="#detailedBypass">The Bypass</button>
-          <div id="detailedBypass" class="collapse">
-            <ol class="1">
-              <li><a class="nav-link" href="#bypassStepOne">Step One</a></li>
-              <li><a class="nav-link" href="#bypassStepTwo">Step Two</a></li>
-              <li><a class="nav-link" href="#bypassStepThree">Step Three</a></li>
-              <li><a class="nav-link" href="#bypassStepFour">Step Four</a></li>
-              <li><a class="nav-link" href="#bypassStepFive">Step Five</a></li>
-            </ol>
-          </div>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
+<!-- <div class="container" style="margin-top:30px;">  -->
+  <div class="sidenav" style="margin-top:60px;">
+    <a href="#top">Table of Contents</a>
+    <button class="dropdown-btn">Basic Instructions
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#newTemplate">New Template</a>
+      <a class="nav-link" href="#templateName">Template Name and Description</a>
+      <a class="nav-link" href="#uploadForm">Upload Form</a>
+      <a class="nav-link" href="#setSigningOrder">Set Signing Order</a>
+      <a class="nav-link" href="#advancedOptions">Advanced Options</a>
+      <a class="nav-link" href="#customFields">CustomFields</a>
+      <a class="nav-link" href="#signatureTips">Signature</a>
+      <a class="nav-link" href="#radioButtons">Radio Buttons</a>
+      <a class="nav-link" href="#createBypass">Create Bypass</a>
+      <a class="nav-link" href="#replaceForm">Replace Form</a>
+      <a class="nav-link" href="#copyTemplate">Copy Template</a>
+      <a class="nav-link" href="#uploadTemplate">Upload Template</a>
+      <a class="nav-link" href="#conditionalLogic">Conditional Logic</a>
     </div>
-    <!-- column -->
-    <div class="col-sm-9">
+    <button class="dropdown-btn">Third Party Instructions
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a class="nav-link" href="#createThirdPartyBox">Create Box for Third Party</a>
+      <a class="nav-link" href="#recipientCollaboration">Recipient & Collaboration</a>
+      <a class="nav-link" href="#stepThree">Step Three</a>
+      <a class="nav-link" href="#stepFour">Step Four</a>
+      <a class="nav-link" href="#stepFive">Step Five</a>
+    </div>
+    <button class="dropdown-btn">Bypass Detailed Instructions
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a class="nav-link" href="#bypassStepOne">Step Oney</a>
+      <a class="nav-link" href="#bypassStepTwo">Step Two</a>
+      <a class="nav-link" href="#bypassStepThree">Step Three</a>
+      <a class="nav-link" href="#bypassStepFour">Step Four</a>
+      <a class="nav-link" href="#bypassStepFive">Step Five</a>
+    </div>
+  </div>  <!-- end of the sidebar -->
+
+      <hr class="d-sm-none">
+<div class="container" style="margin-top:30px;">
+    <div class="main">
+      <a class="anchor" id="top"></a>
       <h1>DocuSign Guide for Chubb</h1>
       <h5>May 10, 2018</h5>
       <!-- <p>Author: Thomas Von Spreckelsen</p> -->
@@ -202,7 +280,7 @@
       <p><img src="assets/images/create_template_13.png" class="img-fluid"></img></p>
       </ul>
       <ul>
-      <li id="byPass">Creating the By Pass
+      <li id="createBypass">Creating the By Pass
         <ul>
           <li><b>Add to same page as signature.</b></li>
           <li><b><mark>Group Label must be 'Bypass selection Q4625000 (2018)'. If creating a new form, the year is not required on a new template. This is due to the need of having a unique Bypass name.</mark></b></li>
@@ -219,15 +297,81 @@
       <p><img src="assets/images/create_template_18.png" class="img-fluid"></img>
       <img src="assets/images/create_template_19.png" class="img-fluid"></img>
       </p>
-      <li>Creating a copy of a template</li>
+      <li id="copyTemplate">Creating a copy of a template</li>
       <p><img src="assets/images/create_template_20.png" class="img-fluid"></img></p>
-    </div>  <!-- column -->
-  </div>  <!-- row -->
-</div>  <!-- container  -->
+      <ul>
+        <li>Downloading existing template
+          <ul>
+            <li>Promote to different inbox</li>
+            <li>To copy if not in current sandbox.</li>
+          </ul>
+        </li>
+      </ul>
+      <p><img src="assets/images/create_template_21.png" class="img-fluid"></img></p>
+      <li id="uploadTemplate">Uploading the template</li>
+      <p><img src="assets/images/create_template_22.png" class="img-fluid"></img></p>
+      <p>As per Robann (rmodrowsky@chubb.com)</p>
+      <p><img src="assets/images/create_template_23.png" class="img-fluid"></img></p>
+      <p><img src="assets/images/create_template_24.png" class="img-fluid"></img></p>
+      <ul>
+        <li id="conditionalLogic">Conditional Logic (CA UM/UIM)
+          <ul>
+            <li>The below example uses a text box (a) with a '1' in white text to show if 'reject coverage' is selected. The '1' can be used in a formula for further qualification of conditional logic.
+              <ul>
+                <li>This example used the '1' to turn off further boxes because coverage was rejected by having conditional logic setting 'Click on the fields to show when trigger field' = 0 as the formula field would be 0 if the conditional text field did not show if rejected.</li>
+              </ul>
+            </li>
+            <li>Formatting of the text field:
+              <ul>
+                <li>Requirement Field</li>
+                <li>Read Only</li>
+                <li>White text font</li>
+                <li>Validation: Numbers</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p><img src="assets/images/create_template_25.png" class="img-fluid"></img></p>
+      <p><img src="assets/images/create_template_26.png" class="img-fluid"></img></p>
+    </div>  
 
-<div class="jumbotron text-center" style="margin-bottom:0">
+
+
+</div>  <!-- container  --> 
+
+<div class="jumbotron text-center" style="margin-bottom:0; float: right; ">
   <p><img src="assets/images/6-SG-Logo-Chubb.png" alt="CHUBB"></p>
 </div>
+
+
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      //dropdown[i].removeClass('fa-caret-down').addClass('fa-caret-right');
+    } else {
+      dropdownContent.style.display = "block";
+      //dropdown[i].removeClass('fa-caret-right').addClass('fa-caret-down');
+    }
+  });
+}
+
+
+
+
+
+</script>
+
 
 
 </body>
