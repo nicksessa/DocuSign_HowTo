@@ -102,7 +102,10 @@
               <li><a class="nav-link" href="#uploadForm">Upload Form</a></li>
               <li><a class="nav-link" href="#setSigningOrder">Set Signing Order</a></li>
               <li><a class="nav-link" href="#advancedOptions">Advanced Options</a></li>
-            </ol>
+              <li><a class="nav-link" href="#customFields">CustomFields</a></li>
+              <li><a class="nav-link" href="#signatureTips">Signature</a></li>
+              <li><a class="nav-link" href="#radioButtons">Radio Buttons</a></li>
+              <li><a class="nav-link" href="#replaceForm">Replace Form</a></li>
           </div>
         </li>
         <li class="nav-item">
@@ -176,17 +179,51 @@
       </ol>
       <p><img src="assets/images/create_template_05.png" class="img-fluid"></img></p>
       <p><img src="assets/images/create_template_06.png" class="img-fluid"></img></p>
-      <p>&#8226; Select 'Next' in the upper righthand corner.</p>
+      <li> Select 'Next' in the upper righthand corner.</li>
+      <p></p>
       <p><img src="assets/images/create_template_07.png" class="img-fluid"></img></p>
-      <p>&#8226; Navigate to the custom fields and drag the Envelope ID in the bottom left corner of the template.</p>
+      <li id="customFields">Navigate to the custom fields and drag the Envelope ID in the bottom left corner of the template.</li>
+      <p></p>
       <p><img src="assets/images/create_template_08.png" class="img-fluid"></img></p>
       <p><img src="assets/images/create_template_09.png" class="img-fluid"></img></p>
-
-
-    </div>  
-    <!-- column -->
-  </div>
-</div>
+      <ul>
+        <li>All the input fields in one page should be anchored to <b>one</b> common 'String' in that page.</li>
+        <li>Do not create any conditional logic until all fields are added and named. The first conditional logic should be for the Bypass.</li>
+        <li id="signatureTips">If we place an input field over a <b>line</b> in the form, we follow the left alignment. The signature field here we can align to the left.</li>
+      </ul>
+      <p><img src="assets/images/create_template_10.png" class="img-fluid"></img></p>
+      <ul>
+      <li>Try placing template fields slightly lower than where they should be as they tend to rise when testing the template.</li>
+      <li>'Field Order' should contain the sequential order for tabbing through the template.</li>
+      <p><img src="assets/images/create_template_11.png" class="img-fluid"></img></p>
+      <li>For all text box fields in the template where we need an input, we should keep the 'Fixed width' option checked to make sure the entered data does not overflow. You can find this option in the 'Formatting' part of text box properties at the right hand side. And we can add tooltips to the all input fields wherever required, which appears as a help text to the signer when he hovers over a particular field.  Font: Helvetica, Size: 10.</li>
+      <p><img src="assets/images/create_template_12.png" class="img-fluid"></img></p>
+      <li id="radioButtons">Radio Buttons - should be used for when only one option can be selected from a list of options. If multiple options can be selected, use checkboxes.</li>
+      <p><img src="assets/images/create_template_13.png" class="img-fluid"></img></p>
+      </ul>
+      <ul>
+      <li id="byPass">Creating the By Pass
+        <ul>
+          <li><b>Add to same page as signature.</b></li>
+          <li><b><mark>Group Label must be 'Bypass selection Q4625000 (2018)'. If creating a new form, the year is not required on a new template. This is due to the need of having a unique Bypass name.</mark></b></li>
+          <li>Bypass also needs to be anchored.</li>
+          <li>Bypass fields can be found on the 'Custom Fields Tab'.</li>
+          <li>The 'Bypass_Yes' and 'Bypass_No' go under the Bypass notes and are included in conditional logic.</li>
+          <li>Check the 'Agree to Sign' box so the template is opened with 'Agree to Sign' logic enabled.</li>
+          <li>Set the conditional logic of the Bypass before any other conditional logic.</li>
+        </ul>
+      </li>
+      </ul>
+      <p><img src="assets/images/create_template_17.png" class="img-fluid"></img></p>
+      <li id="replaceForm">Replacing a form on an existing template</li>
+      <p><img src="assets/images/create_template_18.png" class="img-fluid"></img>
+      <img src="assets/images/create_template_19.png" class="img-fluid"></img>
+      </p>
+      <li>Creating a copy of a template</li>
+      <p><img src="assets/images/create_template_20.png" class="img-fluid"></img></p>
+    </div>  <!-- column -->
+  </div>  <!-- row -->
+</div>  <!-- container  -->
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p><img src="assets/images/6-SG-Logo-Chubb.png" alt="CHUBB"></p>
