@@ -165,7 +165,7 @@
 a.anchor {
   display: block;
   position: relative;
-  top: -250px;
+  top: -60px;
   visibility: hidden;
 }
 
@@ -230,11 +230,12 @@ a.anchor {
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container">
-        <a class="nav-link" href="#createThirdPartyBox">Create Box for Third Party</a>
+        <a class="nav-link" href="#thirdPartyInstructions">Third Party Fields</a>
         <a class="nav-link" href="#recipientCollaboration">Recipient & Collaboration</a>
-        <a class="nav-link" href="#stepThree">Step Three</a>
-        <a class="nav-link" href="#stepFour">Step Four</a>
-        <a class="nav-link" href="#stepFive">Step Five</a>
+        <a class="nav-link" href="#inputAnchors">Anchor Input Fields</a>
+        <a class="nav-link" href="#secondRecipientFields">Second Recipient Fields</a>
+        <a class="nav-link" href="#formattingTextBoxes">Formatting Text Boxes</a>
+        <a class="nav-link" href="#inputFieldsAndAlignment">Input Fields & Alignment</a>
       </div>
       <button class="dropdown-btn">Bypass Detailed Instructions
         <i class="fa fa-caret-down"></i>
@@ -250,7 +251,7 @@ a.anchor {
   </div>  <!-- row -->
 
   <hr class="d-sm-none">
-<!-- <div class="container" style="margin-top:30px;">  -->
+  <!-- <div class="container" style="margin-top:30px;">  -->
   <div class="main">
     <a class="anchor" id="top"></a>
     <h1>DocuSign Guide for Chubb</h1>
@@ -259,10 +260,12 @@ a.anchor {
     <p></p>
     <a class="nav-link" href="https://account-d.docusign.com/#/username">DocuSign Sandbox</a>
     <br>
-    <h2 id="newTemplate">How to Create a New Template</h2>
+    <a class="anchor" id="newTemplate"></a>
+    <h2>How to Create a New Template</h2>
     <p>1. Under the Template tab, click the 'New' button.  You can select create new or upload a template if you are updating a current form.</p>
     <p><img src="assets/images/create_template_01.png" class="img-fluid"></img></p>
-    <p id="templateName">2. Name the form templates to match the naming convention standards (see Forms Specific Requirements document).</p>
+    <a class="anchor" id="templateName"></a>
+    <p>2. Name the form templates to match the naming convention standards (see Forms Specific Requirements document).</p>
     <ol type="a"> 
       <li>Add template description (See Forms Specific Requirements document).
         <ol type="i">
@@ -276,9 +279,11 @@ a.anchor {
       </li>	
     </ol>
     <p><img src="assets/images/create_template_02.png" class="img-fluid"></img></p>
-    <p id="uploadForm">3. Upload Form to build template over.</p>
+    <a class="anchor" id="uploadForm"></a>
+    <p>3. Upload Form to build template over.</p>
     <p><img src="assets/images/create_template_03.png" class="img-fluid"></img></p>
-    <p id="setSigningOrder">4. Set Signing Order.  If the form will need to go to a third party, you will need to add a second recipient, otherwise the only recipient would be 'Insured'</p>
+    <a class="anchor" id="setSigningOrder"></a>
+    <p>4. Set Signing Order.  If the form will need to go to a third party, you will need to add a second recipient, otherwise the only recipient would be 'Insured'</p>
     <p><img src="assets/images/create_template_04.png" class="img-fluid"></img></p>
     <ol type="a" id="advancedOptions">
       <li>
@@ -295,30 +300,38 @@ a.anchor {
     </ol>
     <p><img src="assets/images/create_template_05.png" class="img-fluid"></img></p>
     <p><img src="assets/images/create_template_06.png" class="img-fluid"></img></p>
-    <li> Select 'Next' in the upper righthand corner.</li>
+    <ul>
+      <li> Select 'Next' in the upper righthand corner.</li>
+    </ul>
     <p></p>
     <p><img src="assets/images/create_template_07.png" class="img-fluid"></img></p>
-    <li id="customFields">Navigate to the custom fields and drag the Envelope ID in the bottom left corner of the template.</li>
+    <a class="anchor" id="customFields"></a>
+    <ul>
+      <li>Navigate to the custom fields and drag the Envelope ID in the bottom left corner of the template.</li>
+    </ul>
     <p></p>
     <p><img src="assets/images/create_template_08.png" class="img-fluid"></img></p>
     <p><img src="assets/images/create_template_09.png" class="img-fluid"></img></p>
     <ul>
       <li>All the input fields in one page should be anchored to <b>one</b> common 'String' in that page.</li>
       <li>Do not create any conditional logic until all fields are added and named. The first conditional logic should be for the Bypass.</li>
-      <li id="signatureTips">If we place an input field over a <b>line</b> in the form, we follow the left alignment. The signature field here we can align to the left.</li>
+      <a class="anchor" id="signatureTips"></a>
+      <li>If we place an input field over a <b>line</b> in the form, we follow the left alignment. The signature field here we can align to the left.</li>
     </ul>
     <p><img src="assets/images/create_template_10.png" class="img-fluid"></img></p>
     <ul>
-    <li>Try placing template fields slightly lower than where they should be as they tend to rise when testing the template.</li>
-    <li>'Field Order' should contain the sequential order for tabbing through the template.</li>
-    <p><img src="assets/images/create_template_11.png" class="img-fluid"></img></p>
-    <li>For all text box fields in the template where we need an input, we should keep the 'Fixed width' option checked to make sure the entered data does not overflow. You can find this option in the 'Formatting' part of text box properties at the right hand side. And we can add tooltips to the all input fields wherever required, which appears as a help text to the signer when he hovers over a particular field.  Font: Helvetica, Size: 10.</li>
-    <p><img src="assets/images/create_template_12.png" class="img-fluid"></img></p>
-    <li id="radioButtons">Radio Buttons - should be used for when only one option can be selected from a list of options. If multiple options can be selected, use checkboxes.</li>
-    <p><img src="assets/images/create_template_13.png" class="img-fluid"></img></p>
+      <li>Try placing template fields slightly lower than where they should be as they tend to rise when testing the template.</li>
+      <li>'Field Order' should contain the sequential order for tabbing through the template.</li>
+      <p><img src="assets/images/create_template_11.png" class="img-fluid"></img></p>
+      <li>For all text box fields in the template where we need an input, we should keep the 'Fixed width' option checked to make sure the entered data does not overflow. You can find this option in the 'Formatting' part of text box properties at the right hand side. And we can add tooltips to the all input fields wherever required, which appears as a help text to the signer when he hovers over a particular field.  Font: Helvetica, Size: 10.</li>
+      <p><img src="assets/images/create_template_12.png" class="img-fluid"></img></p>
+      <a class="anchor" id="radioButtons"></a>
+      <li>Radio Buttons - should be used for when only one option can be selected from a list of options. If multiple options can be selected, use checkboxes.</li>
+      <p><img src="assets/images/create_template_13.png" class="img-fluid"></img></p>
     </ul>
     <ul>
-    <li id="createBypass">Creating the By Pass
+    <a class="anchor" id="createBypass"></a>
+    <li>Creating the By Pass
       <ul>
         <li><b>Add to same page as signature.</b></li>
         <li><b><mark>Group Label must be 'Bypass selection Q4625000 (2018)'. If creating a new form, the year is not required on a new template. This is due to the need of having a unique Bypass name.</mark></b></li>
@@ -331,11 +344,13 @@ a.anchor {
     </li>
     </ul>
     <p><img src="assets/images/create_template_17.png" class="img-fluid"></img></p>
-    <li id="replaceForm">Replacing a form on an existing template</li>
+    <a class="anchor" id="replaceForm"></a>
+    <li>Replacing a form on an existing template</li>
     <p><img src="assets/images/create_template_18.png" class="img-fluid"></img>
     <img src="assets/images/create_template_19.png" class="img-fluid"></img>
     </p>
-    <li id="copyTemplate">Creating a copy of a template</li>
+    <a class="anchor" id="copyTemplate"></a>
+    <li>Creating a copy of a template</li>
     <p><img src="assets/images/create_template_20.png" class="img-fluid"></img></p>
     <ul>
       <li>Downloading existing template
@@ -346,13 +361,15 @@ a.anchor {
       </li>
     </ul>
     <p><img src="assets/images/create_template_21.png" class="img-fluid"></img></p>
-    <li id="uploadTemplate">Uploading the template</li>
+    <a class="anchor" id="uploadTemplate"></a>
+    <li>Uploading the template</li>
     <p><img src="assets/images/create_template_22.png" class="img-fluid"></img></p>
     <p>As per Robann (rmodrowsky@chubb.com)</p>
     <p><img src="assets/images/create_template_23.png" class="img-fluid"></img></p>
     <p><img src="assets/images/create_template_24.png" class="img-fluid"></img></p>
     <ul>
-      <li id="conditionalLogic">Conditional Logic (CA UM/UIM)
+      <a class="anchor" id="conditionalLogic"></a>
+      <li>Conditional Logic (CA UM/UIM)
         <ul>
           <li>The below example uses a text box (a) with a '1' in white text to show if 'reject coverage' is selected. The '1' can be used in a formula for further qualification of conditional logic.
             <ul>
@@ -372,7 +389,38 @@ a.anchor {
     </ul>
     <p><img src="assets/images/create_template_25.png" class="img-fluid"></img></p>
     <p><img src="assets/images/create_template_26.png" class="img-fluid"></img></p>
-  </div>  
+
+    <!-- THIRD PARTY SECTION -->
+    <a class="anchor" id="thirdPartyInstructions"></a>
+    <h2 >Third Party Instructions</h2>
+    <p>1. Creating text boxes that will be used to send to third party signer.   Although the insured will complete this, select the person who will receive the document from the drop down menu.</p>
+    <p><img src="assets/images/thirdParty_01.png" class="img-fluid"></img></p>
+    <a class="anchor" id="recipientCollaboration"></a>
+    <p>2. For the text boxes that indicate what to enter in the adjcent boxes, check <q>Read Only</q> under Recipient and <q>Recipients Can Collaborate</q> under Collaboration.  <mark>Need to add data label (see Forms Specific Requirements document).</mark></p>
+    <p><img src="assets/images/thirdParty_02.png" class="img-fluid"></img></p>
+    <ul>
+      <a class="anchor" id="inputAnchors"></a>
+      <li>All the input fields in one page should be anchored to <b>one</b> common <q>String</q> in that page.</li>
+      <a class="anchor" id="secondRecipientFields"></a>
+      <li>In the below six fields: the text box for person name & email values (red pointing) should be only required fields here. <mark>Private message box should be optional.</mark> The Data Labels for the below six fields should be exactly as described in the Forms Requirement Document as IT is programming to pull the third parties information based on these names.
+        <ul>
+          <li>In order for MULTIPLE recipient eSignature forms to function correctly, the template&#39s Data Label for the email address of the second recipient (ie, Inspector, Authorized Representative, Licensed Builder/Contractor, etc.) must always be <q>second recipient email_value</q>.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><img src="assets/images/thirdParty_03.png" class="img-fluid"></img></p>
+    <ul>
+      <a class="anchor" id="formattingTextBoxes"></a>
+      <li>For all text box fields in the template where we need an input, we should keep the <q>Fixed width</q> option checked to make sure the entered data does not overflow. You can find this option in the <q>Formatting</q> part of text box properties at the right hand side. And we can add tooltips to the all input fields wherever required, which appears as a help text to the signer when he hovers over a particular field.  Font: Helvetica, Size: 10.  Enter instructions for the user in the <q>ToolTip</q> and use <q>Validation</q> so that correct information is entered (ex. ZIP or Email &#8211 will require specifically formatted responses)</li>
+    </ul>
+    <p><img src="assets/images/thirdParty_04.png" class="img-fluid"></img></p>
+    <ul>
+      <a class="anchor" id="inputFieldsAndAlignment"></a>
+      <li>If we place an input field over a line in the form, we follow the left alignment. The signature field here we can align to left.</li>
+    </ul>
+    <p><img src="assets/images/thirdParty_05.png" class="img-fluid"></img></p>
+    <!-- BYPASS DETAILS SECTION -->
+  </div> <!-- main body --> 
 </div>  <!-- container  --> 
 
 
