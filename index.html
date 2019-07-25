@@ -44,19 +44,26 @@
     content: "\2b";
   }
 
+/* hide the sidenavbar unless the screen is wider than a phone's viewport */
+.sidenav {
+  display: none;
+}
 
 
 /* Fixed sidenav, full height */
-.sidenav {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+@media (min-width: 768px) {
+  .sidenav {
+    display: block;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -95,9 +102,15 @@
 
 /* Main content */
 .main {
-  margin-left: 250px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-left: 250px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
 }
 
 /* Add an active class to the active dropdown button */
@@ -122,7 +135,9 @@
 
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
+  .sidenav {
+    padding-top: 15px;
+  }
   .sidenav a {font-size: 18px;}
 }
 
@@ -168,51 +183,53 @@ a.anchor {
   </div>  
 </nav>
 
-<!-- <div class="container" style="margin-top:30px;">  -->
-  <div class="sidenav" style="margin-top:60px;">
-    <a href="#top">Table of Contents</a>
-    <button class="dropdown-btn">Basic Instructions
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-      <a href="#newTemplate">New Template</a>
-      <a class="nav-link" href="#templateName">Template Name and Description</a>
-      <a class="nav-link" href="#uploadForm">Upload Form</a>
-      <a class="nav-link" href="#setSigningOrder">Set Signing Order</a>
-      <a class="nav-link" href="#advancedOptions">Advanced Options</a>
-      <a class="nav-link" href="#customFields">CustomFields</a>
-      <a class="nav-link" href="#signatureTips">Signature</a>
-      <a class="nav-link" href="#radioButtons">Radio Buttons</a>
-      <a class="nav-link" href="#createBypass">Create Bypass</a>
-      <a class="nav-link" href="#replaceForm">Replace Form</a>
-      <a class="nav-link" href="#copyTemplate">Copy Template</a>
-      <a class="nav-link" href="#uploadTemplate">Upload Template</a>
-      <a class="nav-link" href="#conditionalLogic">Conditional Logic</a>
-    </div>
-    <button class="dropdown-btn">Third Party Instructions
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-      <a class="nav-link" href="#createThirdPartyBox">Create Box for Third Party</a>
-      <a class="nav-link" href="#recipientCollaboration">Recipient & Collaboration</a>
-      <a class="nav-link" href="#stepThree">Step Three</a>
-      <a class="nav-link" href="#stepFour">Step Four</a>
-      <a class="nav-link" href="#stepFive">Step Five</a>
-    </div>
-    <button class="dropdown-btn">Bypass Detailed Instructions
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container">
-      <a class="nav-link" href="#bypassStepOne">Step Oney</a>
-      <a class="nav-link" href="#bypassStepTwo">Step Two</a>
-      <a class="nav-link" href="#bypassStepThree">Step Three</a>
-      <a class="nav-link" href="#bypassStepFour">Step Four</a>
-      <a class="nav-link" href="#bypassStepFive">Step Five</a>
-    </div>
-  </div>  <!-- end of the sidebar -->
+<div class="container-fluid" style="margin-top:30px;"> 
+  <div class="row">
+    <div class="sidenav" style="margin-top:60px;">
+      <a href="#top">Table of Contents</a>
+      <button class="dropdown-btn">Basic Instructions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="#newTemplate">New Template</a>
+        <a class="nav-link" href="#templateName">Template Name and Description</a>
+        <a class="nav-link" href="#uploadForm">Upload Form</a>
+        <a class="nav-link" href="#setSigningOrder">Set Signing Order</a>
+        <a class="nav-link" href="#advancedOptions">Advanced Options</a>
+        <a class="nav-link" href="#customFields">CustomFields</a>
+        <a class="nav-link" href="#signatureTips">Signature</a>
+        <a class="nav-link" href="#radioButtons">Radio Buttons</a>
+        <a class="nav-link" href="#createBypass">Create Bypass</a>
+        <a class="nav-link" href="#replaceForm">Replace Form</a>
+        <a class="nav-link" href="#copyTemplate">Copy Template</a>
+        <a class="nav-link" href="#uploadTemplate">Upload Template</a>
+        <a class="nav-link" href="#conditionalLogic">Conditional Logic</a>
+      </div>
+      <button class="dropdown-btn">Third Party Instructions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a class="nav-link" href="#createThirdPartyBox">Create Box for Third Party</a>
+        <a class="nav-link" href="#recipientCollaboration">Recipient & Collaboration</a>
+        <a class="nav-link" href="#stepThree">Step Three</a>
+        <a class="nav-link" href="#stepFour">Step Four</a>
+        <a class="nav-link" href="#stepFive">Step Five</a>
+      </div>
+      <button class="dropdown-btn">Bypass Detailed Instructions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a class="nav-link" href="#bypassStepOne">Step Oney</a>
+        <a class="nav-link" href="#bypassStepTwo">Step Two</a>
+        <a class="nav-link" href="#bypassStepThree">Step Three</a>
+        <a class="nav-link" href="#bypassStepFour">Step Four</a>
+        <a class="nav-link" href="#bypassStepFive">Step Five</a>
+      </div>
+    </div>  <!-- end of the sidebar -->
+  </div>
 
       <hr class="d-sm-none">
-<div class="container" style="margin-top:30px;">
+<!-- <div class="container" style="margin-top:30px;">  -->
     <div class="main">
       <a class="anchor" id="top"></a>
       <h1>DocuSign Guide for Chubb</h1>
@@ -335,7 +352,6 @@ a.anchor {
       <p><img src="assets/images/create_template_25.png" class="img-fluid"></img></p>
       <p><img src="assets/images/create_template_26.png" class="img-fluid"></img></p>
     </div>  
-
 
 
 </div>  <!-- container  --> 
