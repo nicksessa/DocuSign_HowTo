@@ -14,13 +14,23 @@
 
   <style>
 
+/* Issues:                                                   */
+/* The footer does not work properly in IE                   */
+/* The collapsing menu does not work properly in IE          */
+/* Need to consider using 'collapse' instead of javascript   */
+
   body {
     color: darkslategray;
   }
 
   .sticky-div {
+    /*  had to add position: fixed to handle IE because IE doesn't handle 'sticky'*/
+    position: fixed;
+    /* had to add width: 100% to fix IE problems. */
+    width: 100%;
     position: sticky;
-    height: 100%;
+    /* set height to 9% because of IE problems.  Doesn't seem to do anything in Chrome however. */
+    height: 9%;
     top: 0;
   }
 
@@ -72,7 +82,7 @@
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   color: #818181;
   display: block;
   border: none;
@@ -81,6 +91,12 @@
   text-align: left;
   cursor: pointer;
   outline: none;
+}
+
+i {
+  padding-left: 5px;
+  width: 20px;
+  padding-right: 20px;
 }
 
 .toc {
@@ -208,12 +224,12 @@ a.anchor {
 <div class="container-fluid" style="margin-top:60px;"> 
   <div class="row" >
     <div class="sidenav" style="margin-top:60px;">
-      <a href="#top">Table of Contents</a>
-      <button class="dropdown-btn">Basic Instructions
+      <a href="#top"><i class="fa fa-list"></i> Table of Contents</a>
+      <button class="dropdown-btn"><i class="fa fa-info fa-lg"></i> Basic Instructions
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container">
-        <a href="#newTemplate">New Template</a>
+        <a class="nav-link" href="#newTemplate">New Template</a>
         <a class="nav-link" href="#templateName">Template Name and Description</a>
         <a class="nav-link" href="#uploadForm">Upload Form</a>
         <a class="nav-link" href="#setSigningOrder">Set Signing Order</a>
@@ -227,7 +243,7 @@ a.anchor {
         <a class="nav-link" href="#uploadTemplate">Upload Template</a>
         <a class="nav-link" href="#conditionalLogic">Conditional Logic</a>
       </div>
-      <button class="dropdown-btn">Third Party Instructions
+      <button class="dropdown-btn"><i class="fa fa-group fa-sm"></i> Third Party Instructions
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container">
@@ -238,7 +254,7 @@ a.anchor {
         <a class="nav-link" href="#formattingTextBoxes">Formatting Text Boxes</a>
         <a class="nav-link" href="#inputFieldsAndAlignment">Input Fields & Alignment</a>
       </div>
-      <button class="dropdown-btn">Bypass &#8211 Detailed Instructions
+      <button class="dropdown-btn"><i class="fa fa-check-circle fa-sm"></i> Bypass &#8211 Detailed Instructions
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-container">
@@ -247,9 +263,11 @@ a.anchor {
         <a class="nav-link" href="#bypassStepThree">Radio Button Values</a>
         <a class="nav-link" href="#bypassStepFour">Add the Note</a>
         <a class="nav-link" href="#bypassStepFive">Add Yes/No Text</a>
-        <a class="nav-link" href="#bypassStepFive">Add Yes/No Notes</a>
-        <a class="nav-link" href="#bypassStepFive">Conditional Logic</a>
-        <a class="nav-link" href="#bypassStepFive">Create Rule</a>
+        <a class="nav-link" href="#bypassStepSix">Add Yes/No Notes</a>
+        <a class="nav-link" href="#bypassStepSeven">Conditional Logic</a>
+        <a class="nav-link" href="#bypassStepEight">Create Rule</a>
+        <a class="nav-link" href="#bypassStepNine">.</a>
+
       </div>
     </div>  <!-- end of the sidebar -->
   </div>  <!-- row -->
@@ -439,8 +457,10 @@ a.anchor {
       <li>After adding all the other elements, then add a radio button from the Standard Fields.</li>
       <p><img src="assets/images/bypassDetail_01.png" class="img-fluid"></img></p>
       <li>Give the radio element a Group Label</li>
+      <br>
       <p><img src="assets/images/bypassDetail_02.png" class="img-fluid"></img></p>
       <li>Enter values for each of the Radio Button options</li>
+      <br>
       <p><img src="assets/images/bypassDetail_03.png" class="img-fluid"></img></p>
       <li>Add the Bypass Note</li>
       <p><img src="assets/images/bypassDetail_04.png" class="img-fluid"></img></p>
@@ -450,6 +470,25 @@ a.anchor {
       <li>Add the <q>Bypass_No_Note</q> and the <q>Bypass_Yes_Note</q></q></li>
       <br>
       <p><img src="assets/images/bypassDetail_06.png" class="img-fluid"></img></p>
+      <p><b>Tip!</b> Offset the notes from the text so that it is easier to select and move each pair.  After the conditional logic is in place, you can move these back into their correct positions.</p>
+      <li>Select the Bypass radio button and then click on <q>Create Rule<q> under Conditional logic.</li>
+      <br>
+      <p><img src="assets/images/bypassDetail_07.png" class="img-fluid"></img></p>
+      <li>Select the trigger field from the dropdown.</li>
+      <br>
+      <p><img src="assets/images/bypassDetail_08.png" class="img-fluid"></img></p>
+      <li>Select <q>Choose to Not Sign</q> from the drop down menu and then on the form select the <q>Bypass Note</q> and the <q>Bypass Yes</q> text.</li>
+      <br>
+      <p><img src="assets/images/bypassDetail_09.png" class="img-fluid"></img></p>
+      <li>Click <q>Done</q> and the Conditional Logic element will show: </li>
+      <br>
+      <p><img src="assets/images/bypassDetail_10.png" class="img-fluid"></img></p>
+      <p>Note that the Bypass Note shows that the field is now conditional:</p>
+      <br>
+      <p><img src="assets/images/bypassDetail_11.png" class="img-fluid"></img></p>
+      <li>Select the Bypass Radio element and then select <b>CREATE RULE</b> in the Conditional Logic section. <b>DO NOT</b> select edit because we are not editing the same rule, but are instead creating a new one.</li>
+      <li>Select <q>Agree to Sign</q> from the drop down menu and then sellect all the fields that you want to be visible if this option is selected.</li>
+
     </ol>
     
   </div> <!-- main body --> 
